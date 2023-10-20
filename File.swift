@@ -6,7 +6,21 @@
 //
 
 import Foundation
-func calc(N: Int , arr:[Int]) -> [Int] {
+// MARK:  - find Missing ...
+func findMissing(arr: [Int]) -> Int{
+    var value = 0
+    var range = 1 + arr.count
+    for i in 1...range {
+        if !(arr.contains(i)){
+            value = i
+        }
+    }
+    return value
+}
+
+
+// MARK: - maxValueOfCounters...
+func maxValueOfCounters(N: Int , arr:[Int]) -> [Int] {
     var finalArray = Array(repeating: 0, count: N)
     var max = 0
     var position = 0
@@ -25,14 +39,4 @@ func calc(N: Int , arr:[Int]) -> [Int] {
         }
     }
     return finalArray
-}
-func findMissing(arr: [Int]) -> Int{
-    var value = 0
-    var range = 1 + arr.count
-    for i in 1...range {
-        if !(arr.contains(i)){
-            value = i
-        }
-    }
-    return value
 }
